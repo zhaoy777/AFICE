@@ -43,7 +43,7 @@ def load_my_file_hidden_states():
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 hidden_states_dict = load_my_file_hidden_states()
-model = Transformer(1, 4096, 16).to(device)
+model = Transformer(1, 4096, 64).to(device)
 model.load_state_dict(torch.load('best_model.pth'))
 
 for file_name in ['mmlu_0', 'mmlu_1', 'mmlu_2', 'mmlu_3', 'mmlu_4', 'mmlu_5', 'mmlu_6', 'mmlu_7']:
